@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Directory from './components/directory/directory.component';
+import {Routes, Route} from 'react-router-dom'
+import Home from './routes/home/home.component';
+import Navigation from './routes/navigation/navigation.component';
+import Checkout from './routes/checkout/checkout.component';
+import Authentication from './routes/authentication/authentication.component';
+import ProductDetails from './components/product-details/product-details.component';
+import Account from './routes/account/account.component';
+//import CategoriesPreview from '../categories-preview/categories-preview.component';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path='/shop' element={<Directory />} />
+        <Route path='auth' element={<Authentication />} />
+        <Route path='/shop/details' element={<ProductDetails />} />
+        <Route path='/account' element={<Account />} />
+
+        {/* <Route path='/shop' element={<CategoriesPreview />} /> */}
+        <Route path='/checkout' element={<Checkout />} />
+      </Route>
+    </Routes>
   );
 }
 
