@@ -8,8 +8,7 @@ import Authentication from './routes/authentication/authentication.component';
 import ProductDetails from './components/product-details/product-details.component';
 import Account from './routes/account/account.component';
 //import CategoriesPreview from '../categories-preview/categories-preview.component';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
   return (
